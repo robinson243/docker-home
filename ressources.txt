@@ -1,0 +1,99 @@
+#Docker
+
+
+
+#Conteneur
+est une boite avec differents services/programmes
+
+#Images
+contient toutes les informations dont le conteneur aura besoin pour etre crée
+
+#DockerHub
+liste d'images officielles ou non officielles qui sont disponibles que chaque utilisateurs peut utilisateurs
+
+#Dockerfile
+permet de creer une image personnalisée. Elle est basé sur une image existante simple.
+
+#Docker-compose.yaml
+qui nous permets de creer une config spécifique pour nos conteneur
+
+#Les commandes
+
+#docker run
+pour lancer un conteneur
+
+#docker ps / ls
+faire la liste de tous les container en route avec -a. on lui dit d'afficher tous les conteneurs presénts qui ont été crées
+
+#docker images ls 
+permet de faire d'afficher liste de des images disponibles
+
+#docker rm [id du conteneur]
+permet de supprimer le conteneur souhaité
+
+#docker image rm [id de l'image]
+permet de supprimer l'image
+
+#docker run -it (-i: interact, -t: du texte) [le conteneur];
+lancé un conteneur et le creer avant
+
+#exit 
+pour sortir du conteneur lancé 
+
+# --rm 
+pour le supprimer
+
+#docker start [id du conteneur]
+pour relancer un conteneur arréter
+
+#docker stop [id]
+pour stocker le conteneur lancé
+
+#-ai (a :all, i:interact)
+
+#docker exec -it [id] bash
+pour rentrer dans un conteneur lancer
+
+#docker exec [id] + cmd bash
+pour executer une commande sans entrer dans le conteneur
+
+#volumes
+Un volume Docker est un mécanisme qui permet de persister des données en dehors du container, sur le système de fichiers de la machine hote
+
+# docker volume create [nom du volume]
+pour creer un volume 
+
+#docker volume ls
+lister les volumes
+
+#docker volume rm [nom du volume]
+supprimer un volume
+
+#docker run -it --rm [nom du volume]:[dossier conteneur] [image]
+Lier un volume
+
+#docker volume inspect [nom du volume]
+donner les infos d'un volume
+
+#docker run --rm -p [port local]:[port conteneur] [conteneur]
+-p sert a dire le port 
+
+# -d pour detach pour le faire tourner en arriere plan
+
+# --name [name] pour renommer le nom de son image
+
+# volume mappé
+lier un dossier/fichier du PC avec celui du container en temps réel
+
+# volume managé
+espace de stockage persistant créé et géré par Docker
+
+
+#Dockerfile
+permet de créer une image personnalisée 
+
+#docker build -t [nom qu'on veut donner à notre image]
+permet de build a partir de notre Dockerfile
+
+#docker-compose.yaml
+description complete des containers qu'on aura besoin 

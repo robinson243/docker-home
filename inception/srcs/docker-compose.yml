@@ -1,0 +1,28 @@
+services:
+  nginx:
+    build: ./requirements/nginx
+    container_name: nginx
+    networks:
+      - bridge_network
+
+  wordpress:
+    build: ./requirements/wordpress
+    container_name: wordpress
+    ports:
+      - 9000:9000
+    # volumes :
+    #   - ./php:/var/www/html
+    networks:
+      - bridge_network
+
+  mariadb:
+    build: ./requirements/mariadb
+    container_name: mariadb
+    ports:
+      - 3306:3306
+    networks:
+      - bridge_network
+
+networks:
+  bridge_network:
+    driver: bridge

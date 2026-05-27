@@ -1,0 +1,61 @@
+services:
+  my_ubuntu_1:
+    image: celtak/ubuntu-ping-ip
+    container_name: celtak_ubuntu_1
+    stdin_open: true
+    tty: true
+    networks:
+      - bridge_network_1
+  
+  my_ubuntu_2:
+    image: celtak/ubuntu-ping-ip
+    container_name: celtak_ubuntu_2
+    stdin_open: true
+    tty: true
+    networks:
+      - bridge_network_1
+
+  my_ubuntu_3:
+    image: celtak/ubuntu-ping-ip
+    container_name: celtak_ubuntu_3
+    stdin_open: true
+    tty: true
+    networks:
+      - bridge_network_2
+
+  my_ubuntu_4:
+    image: celtak/ubuntu-ping-ip
+    container_name: celtak_ubuntu_4
+    stdin_open: true
+    tty: true
+    networks:
+      - bridge_network_2
+
+
+  my_ubuntu_5:
+    image: celtak/ubuntu-ping-ip
+    container_name: celtak_ubuntu_5
+    stdin_open: true
+    tty: true
+    networks:
+      - bridge_network_3
+    # volumes mappés
+    # volumes: 
+    #   - ./data:/data-container
+    # volumes managés
+#     volumes:
+#       - test_volume:/test-volume-container
+# volumes: 
+#   test_volume:
+
+networks:
+  bridge_network_1:
+    driver: bridge
+  bridge_network_2:
+    driver: bridge
+  bridge_network_3:
+    driver: bridge
+  
+
+
+ 

@@ -13,16 +13,18 @@ services:
     # volumes :
     #   - ./php:/var/www/html
     networks:
-      - bridge_network
+      - docker_network
 
   mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
-    ports:
-      - 3306:3306
+    expose:
+      - "3306"
     networks:
-      - bridge_network
+      - docker_network
+    env_file:
+      - ../.env
 
 networks:
-  bridge_network:
+  docker_network:
     driver: bridge

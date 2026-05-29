@@ -3,7 +3,7 @@ services:
     build: ./requirements/nginx
     container_name: nginx
     networks:
-      - bridge_network
+      - docker_network
 
   wordpress:
     build: ./requirements/wordpress
@@ -14,6 +14,8 @@ services:
     #   - ./php:/var/www/html
     networks:
       - docker_network
+    volumes:
+      - www-data:/var/www/html
 
   mariadb:
     build: ./requirements/mariadb
@@ -24,6 +26,12 @@ services:
       - docker_network
     env_file:
       - ../.env
+    volumes:
+      - mariadb_database:/var/lib/mysql 
+
+volumes: 
+  mariadb_database:
+  www-data:
 
 networks:
   docker_network:

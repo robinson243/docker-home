@@ -8,10 +8,10 @@ services:
   wordpress:
     build: ./requirements/wordpress
     container_name: wordpress
-    ports:
-      - 9000:9000
-    # volumes :
-    #   - ./php:/var/www/html
+    expose:
+      - "9000"
+    env_file:
+      - ../.env
     networks:
       - docker_network
     volumes:

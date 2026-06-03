@@ -14,9 +14,6 @@ liste d'images officielles ou non officielles qui sont disponibles que chaque ut
 #Dockerfile
 permet de creer une image personnalisée. Elle est basé sur une image existante simple.
 
-#Docker-compose.yaml
-qui nous permets de creer une config spécifique pour nos conteneur
-
 #Les commandes
 
 #docker run
@@ -96,4 +93,12 @@ permet de créer une image personnalisée
 permet de build a partir de notre Dockerfile
 
 #docker-compose.yaml
-description complete des containers qu'on aura besoin 
+permet de décrire et gérer plusieurs conteneurs dans un seul fichier de configuration.
+
+On y définit :
+- les services (nginx, wordpress, mariadb, etc.)
+- les ports
+- les volumes
+- les réseaux
+- les variables d'environnement
+- l'ordre de démarrage des conteneurs

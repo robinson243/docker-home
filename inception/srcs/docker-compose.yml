@@ -2,6 +2,10 @@ services:
   nginx:
     build: ./requirements/nginx
     container_name: nginx
+    volumes:
+      - www-data:/var/www/html 
+    ports:
+      - "443:443"
     networks:
       - docker_network
 

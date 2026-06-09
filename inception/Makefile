@@ -1,12 +1,12 @@
 COMPOSE_FILE = srcs/docker-compose.yml
 LOGIN        = romukena
 
-all: hosts volumes
+all: volumes
 	docker compose -f $(COMPOSE_FILE) up --build -d
 
-hosts:
-	@grep -q "$(LOGIN).42.fr" /etc/hosts || \
-		echo "127.0.0.1 $(LOGIN).42.fr" | sudo tee -a /etc/hosts
+# hosts:
+# 	@grep -q "$(LOGIN).42.fr" /etc/hosts || \
+# 		echo "127.0.0.1 $(LOGIN).42.fr" | sudo tee -a /etc/hosts
 
 volumes:
 	@mkdir -p $(HOME)/data/wordpress
@@ -27,4 +27,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all down stop clean fclean re hosts volumes
+.PHONY: all down stop clean fclean re volumes

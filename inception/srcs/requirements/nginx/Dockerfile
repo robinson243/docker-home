@@ -5,6 +5,6 @@ RUN apt install nginx openssl -y && mkdir -p /etc/nginx/ssl && openssl req -x509
     -newkey rsa:2048 \
     -keyout /etc/nginx/ssl/inception.key \
     -out /etc/nginx/ssl/inception.crt \
-    -subj "/C=FR/ST=IDF/L=Paris/O=42/CN=localhost"
+    -subj "/C=FR/ST=IDF/L=Paris/O=42/CN=romukena.42.fr"
 COPY nginx.conf /etc/nginx/nginx.conf
 CMD ["nginx", "-g", "daemon off;"]

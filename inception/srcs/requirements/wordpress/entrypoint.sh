@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DB_PASSWORD=$(cat /run/secrets/db_password)
+WP_ADMIN_PASSWORD=$(cat /run/secrets/credentials)
+
 until mysqladmin ping -h mariadb --silent; do
     sleep 1
 done

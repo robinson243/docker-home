@@ -2,6 +2,7 @@ services:
   nginx:
     build: ./requirements/nginx
     container_name: nginx
+    restart: always
     volumes:
       - www-data:/var/www/html 
     ports:
@@ -12,6 +13,7 @@ services:
   wordpress:
     build: ./requirements/wordpress
     container_name: wordpress
+    restart: always
     expose:
       - "9000"
     env_file:
@@ -27,6 +29,7 @@ services:
   mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
+    restart: always
     expose:
       - "3306"
     networks:

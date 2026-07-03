@@ -3,7 +3,7 @@
 DB_PASSWORD=$(cat /run/secrets/db_password)
 WP_ADMIN_PASSWORD=$(cat /run/secrets/credentials)
 
-until mysqladmin ping -h mariadb --silent; do
+until mysql -h mariadb -u"$DB_USER" -p"$DB_PASSWORD" -e "SELECT 1;" >/dev/null 2>&1; do
     sleep 1
 done
 
